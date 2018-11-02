@@ -94,7 +94,7 @@
         font-size: 18px;
         color: #000000;
       }
-      .button {
+      button {
           background-color: #1F1FFF;
           border: none;
           color: white;
@@ -103,8 +103,63 @@
           font-size: 48px;
           cursor: pointer;
       }
-      .button:hover {
+      button:hover {
           background-color: #3F3FAF;
+      }
+      /*meowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww*/
+      /* Center the image and position the close button */
+      .imgcontainer {
+      text-align: center;
+      margin: 24px 0 12px 0;
+      position: relative;
+      }
+      /* The Modal (background) */
+      .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      padding-top: 60px;
+      }
+      /* Modal Content/Box */
+      .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+      }
+      /* Add Zoom Animation */
+      .animate {
+      -webkit-animation: animatezoom 0.6s;
+      animation: animatezoom 0.6s
+      }
+      @-webkit-keyframes animatezoom {
+      from {-webkit-transform: scale(0)}
+      to {-webkit-transform: scale(1)}
+      }
+      @keyframes animatezoom {
+      from {transform: scale(0)}
+      to {transform: scale(1)}
+      }
+      @media screen and (max-width: 300px) {
+      span.psw {
+      display: block;
+      float: none;
+      }
+      .cancelbtn {
+      width: 100%;
+      }
+      }
+      input {
+        width: 600px;
+        height: 40px;
+        font-size: 36px;
       }
     </style>
   </head>
@@ -126,7 +181,7 @@
       <div id="back">
         <center>
           <br></br>
-          <p id="medium" class="whiteboxtext">Projects</p>
+          <p id="medium" class="whiteboxtext">Some images</p>
         </center>
         <div class="row">
           <div class="col-sm-2 col-xs-12">
@@ -188,13 +243,41 @@
         <p id="showmore">Show more...</p>
         <br></br>
         <hr/>
-        <p id="medium" class="whiteboxtext">Start your project now easily!</p>
+        <p id="medium" class="whiteboxtext">Post any image</p>
         <!--<a href="post.html">
           <img id="image" src="https://mbtskoudsalg.com/images/plus-sign-icon-png-8.png" width="25%">
         </a>-->
-        <button type="button" class="button">Click Me!</button>
-<br></br>
-<br></br>
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Click Me!</button>
+        <div id="id01" class="modal">
+           <form class="modal-content animate" action="">
+              <div class="imgcontainer">
+                 <p></p>
+              </div>
+              <center>
+                  <div mv-app="commentform" mv-storage="https://github.com/gabriel786432" mv-autosave="5">
+                    <label>
+                 <p class="navtext" id="medium">Enter image URL:</p>
+                 <input type="email" property="email"/>
+             </label>
+         </div>
+                 <br></br>
+              </center>
+           </form>
+        </div>
+        <script>
+           // Get the modal
+           var modal = document.getElementById('id01');
+
+           // When the user clicks anywhere outside of the modal, close it
+           window.onclick = function(event) {
+               if (event.target == modal) {
+                   modal.style.display = "none";
+               }
+           }
+        </script>
+      <br></br>
+      <br></br>
+
     </center>
     </div>
     <br></br>
